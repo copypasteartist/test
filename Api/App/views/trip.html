@@ -1,0 +1,46 @@
+﻿
+<div>
+    <h2 data-bind="html: displayName"></h2>
+
+    <div class="block">
+        <table class="table table-striped table-bordered table-condensed">
+            <thead>
+                <tr>
+                    
+                    <th>Name</th>
+                    <th>Destination Code</th>
+                    <th>Resort Code</th>
+
+                </tr>
+            </thead>
+
+            <tbody data-bind="foreach: trips">
+                <tr data-bind="css: { dirty: isDirty() }">
+
+                    
+                    <td>
+                        <span data-bind="text: Name, visible: !isEditing()"></span>
+                        <input type="text" data-bind="value: Name, visible: isEditing " />
+                    </td>
+                    <td>
+                        <select data-bind="options: $root.destinations, optionsValue: 'Id', optionsText: 'Code',value: DestinationId" />
+                    </td>
+                     <td>
+                         <select data-bind="options: $root.resorts, optionsValue: 'Id', optionsText: 'Code', value: ResortId" />
+                    </td>
+                    <td>
+                        <button class="btn btn-mini btn-danger"  data-bind="click: $root.remove, attr: { title: 'Id: ' + Id() }">Delete</button>
+                        <button class="btn btn-mini btn-warning" data-bind="click: $root.edit, attr: { title: 'Id: ' + Id() }">Edit</button>
+                    </td>
+
+                </tr>
+            </tbody>
+        </table>
+
+        <button class="btn btn-primary" data-bind='click: addTrip'>Lägg till</button>
+        <button class="btn btn-success" data-bind='enable: dirtyTrips().length > 0, click: saveTrips' type='submit'>Spara</button>
+
+
+    </div>
+</div>
+<pre data-bind="text: ko.toJSON($data, null, 2)"></pre>

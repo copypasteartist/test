@@ -1,0 +1,80 @@
+﻿
+<div>
+    <h2 data-bind="html: displayName"></h2>
+
+    <div class="block">
+        <table class="table table-striped table-bordered table-condensed">
+            <thead>
+                <tr>
+                    <th>Season</th>
+                    <th>Trip</th>
+                    <th>From</th>
+                    <th>To</th>
+                    <th>Guide</th>
+                    <th>Pax</th>
+                    <th>Stud</th>
+                    <th>SE</th>
+                    <th>NO</th>
+                    <th>DK</th>
+                    <th>FI</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+
+            <tbody data-bind="foreach: plannedTrips">
+                <tr data-bind="css: { dirty: isDirty() }">
+                    <td>
+                        <select data-bind="options: $root.seasons, optionsValue: 'Code', optionsText: 'Description', value: SeasonCode" class="input-small"/>
+                    </td>
+                    <td>
+                        <select data-bind="options: $root.trips, optionsValue: 'Id', optionsText: 'tripDescription', value: TripId" class="input-medium"/>
+                    </td>
+                    <td>
+                        <input type="text" data-bind="datepicker: From, datepickerOptions: { format: 'YYYY-MM-DD', autoHide: true }" class="input-small" />
+                    </td>
+                     <td>
+                           <input type="text" data-bind="datepicker: To, datepickerOptions: { format: 'YYYY-MM-DD', autoHide: true }" class="input-small" />
+                    </td>
+                    <td>
+                     <select data-bind="options: $root.guides, optionsValue: 'Id', optionsText: 'Name', value: GuideId" class="input-medium"/>
+                    </td>
+                    <td>
+                        <input type="text" data-bind="value:Pax" class="input-mini"/>
+                    </td>
+                    <td>
+                         <select data-bind="options: $root.guides, optionsValue: 'Id', optionsText: 'Name', value: StudId" class="input-medium"/>
+                    </td>
+                    <td>
+                        <input type="checkbox" value="Se" data-bind="checked: Se" />
+                    </td>
+                    <td>
+                        <input type="checkbox" value="No" data-bind="checked: No" />
+                    </td>
+                    <td>
+                        <input type="checkbox" value="Dk" data-bind="checked: Dk" />
+                    </td>
+                     <td>
+                        <input type="checkbox" value="Fi" data-bind="checked: Fi" />
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                     <!--   <button class="btn btn-mini btn-danger"  data-bind="click: $root.remove, attr: { title: 'Id: ' + Id() }">Delete</button>
+                        <button class="btn btn-mini btn-warning" data-bind="click: $root.edit, attr: { title: 'Id: ' + Id() }">Edit</button>-->
+                    </td>
+
+                </tr>
+            </tbody>
+        </table>
+
+        <button class="btn btn-primary" data-bind='click: addPlannedTrip'>Lägg till</button>
+        <button class="btn btn-success" data-bind='enable: dirtyTrips().length > 0, click: savePlannedTrips' type='submit'>Spara</button>
+
+
+    </div>
+</div>
+<pre data-bind="text: ko.toJSON($data, null, 2)"></pre>

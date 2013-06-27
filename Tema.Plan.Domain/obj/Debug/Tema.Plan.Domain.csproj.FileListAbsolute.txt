@@ -1,0 +1,5 @@
+C:\Utveckling\notUnderSourceControl\Tema.Plan.Domain\Tema.Plan.Domain\bin\Debug\Tema.Plan.Domain.dll
+C:\Utveckling\notUnderSourceControl\Tema.Plan.Domain\Tema.Plan.Domain\bin\Debug\Tema.Plan.Domain.pdb
+C:\Utveckling\notUnderSourceControl\Tema.Plan.Domain\Tema.Plan.Domain\obj\Debug\Tema.Plan.Domain.csprojResolveAssemblyReference.cache
+C:\Utveckling\notUnderSourceControl\Tema.Plan.Domain\Tema.Plan.Domain\obj\Debug\Tema.Plan.Domain.dll
+C:\Utveckling\notUnderSourceControl\Tema.Plan.Domain\Tema.Plan.Domain\obj\Debug\Tema.Plan.Domain.pdb
